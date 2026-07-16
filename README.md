@@ -85,9 +85,6 @@ For real-world applications:
 - Test on multiple AI models to ensure reliability
 - Monitor outputs and refine examples based on failures
 
-## 👤 Author
-
-Neurofive Solutions - Generative AI Internship Program
 
 ## 📅 Date
 
@@ -97,4 +94,3 @@ Week 1 - Generative AI & Prompt Engineering Fundamentals
 
 **Status:** ✅ Completed
 
-For more information or questions, refer to the detailed results file.
