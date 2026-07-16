@@ -1,0 +1,211 @@
+================================================================================
+TASK 01: ZERO-SHOT VS FEW-SHOT PROMPT ENGINEERING - COMPLETE REPORT
+================================================================================
+
+NEUROFIVE SOLUTIONS - GENERATIVE AI INTERNSHIP PROGRAM
+Week 1 - Generative AI & Prompt Engineering Fundamentals
+Task: Prompt Basics — Zero-Shot vs Few-Shot Showdown
+
+PROJECT: Zero-Shot vs Few-Shot Prompt Engineering Showdown
+OBJECTIVE: Understand how providing examples affects AI classification accuracy
+
+RESULTS SUMMARY:
+- Total Test Messages: 10
+- Classification Categories: 3 (Complaint, Question, Praise)
+- AI Models Tested: 3 (Claude, ChatGPT, Gemini)
+- Prompting Methods: 2 (Zero-shot, Few-shot)
+- Total Classifications: 60
+- Errors: 0
+- Overall Accuracy: 100%
+
+KEY FINDING IN ONE SENTENCE:
+While modern LLMs perform well without examples (zero-shot), providing clear 
+examples (few-shot) is essential for production reliability and consistency.
+
+================================================================================
+CUSTOMER SUPPORT MESSAGES (Test Dataset)
+================================================================================
+
+Test Messages Used:
+
+1. "Your product broke after 2 days! This is unacceptable!"
+2. "How do I reset my password?"
+3. "Amazing customer service, thank you so much!"
+4. "The app keeps crashing every time I try to login."
+5. "Can you tell me if this works on Mac?"
+6. "You guys are the best! Love everything about this!"
+7. "I've been waiting for a refund for 3 weeks. What's going on?"
+8. "Is there a way to export my data?"
+9. "Terrible experience. Never coming back."
+10. "Thanks for fixing that bug so quickly!"
+
+================================================================================
+ COMPLETE RESULTS COMPARISON TABLE
+================================================================================
+
+| Message # | Correct | Claude (0-shot) | ChatGPT (0-shot) | Gemini (0-shot) | Claude (1-shot) | ChatGPT (1-shot) | Gemini (1-shot) |
+|-----------|---------|-----------------|------------------|-----------------|-----------------|------------------|-----------------|
+| 1         | Complain| Complaint       | Complaint        | Complaint       | Complaint       | Complaint        | Complaint       |
+| 2         | Question| Question        | Question         | Question        | Question        | Question         | Question        |
+| 3         | Praise  | Praise          | Praise           | Praise          | Praise          | Praise           | Praise          |
+| 4         | Complain| Complaint       | Complaint        | Complaint       | Complaint       | Complaint        | Complaint       |
+| 5         | Question| Question        | Question         | Question        | Question        | Question         | Question        |
+| 6         | Praise  | Praise          | Praise           | Praise          | Praise          | Praise           | Praise          |
+| 7         | Complain| Complaint       | Complaint        | Complaint       | Complaint       | Complaint        | Complaint       |
+| 8         | Question| Question        | Question         | Question        | Question        | Question         | Question        |
+| 9         | Complain| Complaint       | Complaint        | Complaint       | Complaint       | Complaint        | Complaint       |
+| 10        | Praise  | Praise          | Praise           | Praise          | Praise          | Praise           | Praise          |
+|-----------|---------|-----------------|------------------|-----------------|-----------------|------------------|-----------------|
+| ACCURACY  |         | 10/10 (100%)    | 10/10 (100%)     | 10/10 (100%)    | 10/10 (100%)    | 10/10 (100%)     | 10/10 (100%)    |
+
+ACCURACY SUMMARY:
+
+ZERO-SHOT PROMPTING:
+  • Claude: 100% (10/10 correct)
+  • ChatGPT: 100% (10/10 correct)
+  • Gemini: 100% (10/10 correct)
+  • Average: 100%
+
+FEW-SHOT PROMPTING:
+  • Claude: 100% (10/10 correct)
+  • ChatGPT: 100% (10/10 correct)
+  • Gemini: 100% (10/10 correct)
+  • Average: 100%
+
+OVERALL PERFORMANCE:
+- No difference between zero-shot and few-shot
+- All models achieved perfect accuracy
+- Task difficulty: Very Low
+- Consistency: Perfect across all models
+
+================================================================================
+ COMPLETE PROMPTS USED
+================================================================================
+
+ZERO-SHOT PROMPT:
+================================================================================
+
+Classify the following customer support messages into one of three categories: 
+"Complaint", "Question", or "Praise".
+
+Message 1: Your product broke after 2 days! This is unacceptable!
+Message 2: How do I reset my password?
+Message 3: Amazing customer service, thank you so much!
+Message 4: The app keeps crashing every time I try to login.
+Message 5: Can you tell me if this works on Mac?
+Message 6: You guys are the best! Love everything about this!
+Message 7: I've been waiting for a refund for 3 weeks. What's going on?
+Message 8: Is there a way to export my data?
+Message 9: Terrible experience. Never coming back.
+Message 10: Thanks for fixing that bug so quickly!
+
+For each message, provide only the classification.
+
+================================================================================
+
+FEW-SHOT PROMPT:
+================================================================================
+
+Classify the following customer support messages into one of three categories: 
+"Complaint", "Question", or "Praise".
+
+Examples:
+- "Your product is amazing!" → Praise
+- "How do I change my settings?" → Question
+- "This is broken and I'm furious!" → Complaint
+
+Now classify these messages:
+
+Message 1: Your product broke after 2 days! This is unacceptable!
+Message 2: How do I reset my password?
+Message 3: Amazing customer service, thank you so much!
+Message 4: The app keeps crashing every time I try to login.
+Message 5: Can you tell me if this works on Mac?
+Message 6: You guys are the best! Love everything about this!
+Message 7: I've been waiting for a refund for 3 weeks. What's going on?
+Message 8: Is there a way to export my data?
+Message 9: Terrible experience. Never coming back.
+Message 10: Thanks for fixing that bug so quickly!
+
+For each message, provide only the classification.
+
+================================================================================
+
+PROMPT DESIGN NOTES:
+
+Zero-Shot Design:
+- No examples provided
+- Direct instruction only
+- Tests model's inherent understanding
+- Simpler, more concise
+
+Few-Shot Design:
+- 3 diverse examples provided
+- Covers all 3 categories
+- Clear input-output format with arrow notation
+- Guides model behavior without complex instructions
+
+Both prompts:
+- Same 10 test messages
+- Same output format requirement (single classification)
+- Same three categories (Complaint, Question, Praise)
+- Identical test dataset for fair comparison
+
+================================================================================
+ DETAILED ANALYSIS & INTERPRETATION
+================================================================================
+
+EXPERIMENT OVERVIEW:
+- Models Tested: Claude, ChatGPT, Gemini
+- Task Type: Multi-class Classification (3 categories)
+- Sample Size: 10 messages
+- Approach 1: Zero-Shot (no examples)
+- Approach 2: Few-Shot (3 examples)
+
+WHY BOTH APPROACHES ACHIEVED 100% ACCURACY:
+
+1. TASK SIMPLICITY
+   - The classification task was straightforward
+   - Clear semantic distinctions between categories
+   - No edge cases or ambiguous messages
+   - Messages had strong linguistic signals
+
+2. MODEL CAPABILITY
+   - Modern LLMs (Claude, GPT-4, Gemini) are highly sophisticated
+   - Can infer classification rules from category descriptions alone
+   - Extensive training on similar tasks
+   - Strong zero-shot capabilities on basic NLP tasks
+
+3. MESSAGE CLARITY
+   - Test messages were explicit and unambiguous
+   - Each message strongly favored one category
+   - No sarcasm, irony, or mixed sentiments
+   - Clear linguistic indicators present
+
+WHY FEW-SHOT REMAINS ESSENTIAL:
+
+Despite perfect accuracy in both cases, few-shot prompting is superior for:
+
+1. PRODUCTION RELIABILITY
+   - Reduces hallucination in edge cases
+   - Ensures consistent output format
+   - Provides explicit guidance to model
+   - Increases reproducibility
+
+2. COMPLEX SCENARIOS
+   - Helps with ambiguous or nuanced messages
+   - Critical for sensitive classifications
+   - Reduces model drift over time
+   - Better for multi-step reasoning
+
+3. COST EFFICIENCY
+   - Reduces errors that require correction
+   - Minimizes need for manual review
+   - Prevents expensive mistakes
+   - Improves workflow efficiency
+
+4. USER CONTROL
+   - Gives humans more influence over outputs
+   - Makes model behavior more predictable
+   - Easier to debug when issues arise
+   - Better documentation of intent
